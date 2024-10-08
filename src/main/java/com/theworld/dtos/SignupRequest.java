@@ -1,10 +1,16 @@
 package com.theworld.dtos;
 
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import lombok.Data;
 
-@Data
+import com.theworld.model.enums.DoctorEnums;
+import com.theworld.model.enums.Role;
+import jakarta.annotation.Nullable;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Date;
+
+@Getter
+@Setter
 public class SignupRequest {
 
 
@@ -12,22 +18,15 @@ public class SignupRequest {
 
     private String lastname;
 
-
     private String phonenumber;
 
     private String email;
 
-
-    public enum Gender {
-        MALE, FEMALE;
-    }
-
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
-
-
-    private int age;
-
-
     private String password;
+    public Role role ;
+    @Nullable
+    DoctorEnums.Speciality specialty;
+    @Nullable
+    private Date dateOfBirth;
+
 }

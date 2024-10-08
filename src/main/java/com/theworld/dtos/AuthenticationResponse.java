@@ -1,11 +1,14 @@
 package com.theworld.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import com.theworld.model.enums.Role;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class AuthenticationResponse {
 
     public String jwt;
+    public String role ;
 }
